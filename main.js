@@ -310,6 +310,11 @@
 
     var BG = [14, 15, 15];
     var BG2 = [22, 23, 22];
+    var heroTop = 0;
+
+    measureTasks.push(function () {
+      heroTop = hero.getBoundingClientRect().top + scrollY;
+    });
 
     scrollTasks.push(function (y) {
       if (reduce) return;
@@ -321,7 +326,7 @@
         marquee.style.transform = 'translateY(0)';
         return;
       }
-      var p = clamp(y / dist, 0, 1);
+      var p = clamp((y - heroTop) / dist, 0, 1);
       var eased = easeOutCubic(p);
       heroContent.style.transform = 'scale(' + (1 - 0.15 * eased).toFixed(4) + ')';
       heroContent.style.opacity = (1 - 0.4 * eased).toFixed(3);

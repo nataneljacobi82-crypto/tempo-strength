@@ -345,10 +345,32 @@ p {
    Nav
    -------------------------------------------------------------------------- */
 
+.demo-banner {
+  padding: 8px var(--gutter);
+  background: #C6FF3D;
+  color: #0E0F0F;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.demo-banner a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Sticky with a negative bottom margin: overlays the hero like a fixed bar,
+   but sits below the demo banner at scroll position 0. */
 .nav {
-  position: fixed;
-  inset: 0 0 auto 0;
+  position: sticky;
+  top: 0;
   z-index: 100;
+  margin-bottom: calc(-1 * var(--nav-h));
   min-height: var(--nav-h);
   display: flex;
   align-items: center;
@@ -475,6 +497,7 @@ html:not(.js) .nav {
   html:not(.js) .nav {
     position: sticky;
     top: 0;
+    margin-bottom: 0;
   }
 
   html:not(.js) .hero__content {
