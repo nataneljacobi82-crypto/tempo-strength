@@ -176,6 +176,11 @@ p {
 
 .h2 {
   font-size: clamp(2.75rem, 7vw, 6rem);
+  text-wrap: balance;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .section {
@@ -220,8 +225,8 @@ p {
   display: inline-block;
   overflow: hidden;
   vertical-align: bottom;
-  padding-block: 0.08em;
-  margin-block: -0.08em;
+  padding: 0.08em 0.06em;
+  margin: -0.08em -0.06em;
 }
 
 .split .w__i {
@@ -233,6 +238,11 @@ p {
 
 .js .split:not(.is-visible) .w__i {
   transform: translateY(110%);
+}
+
+/* The hero wrappers carry extra room for the underline, so hide further. */
+.js .hero__title:not(.is-visible) .w__i {
+  transform: translateY(140%);
 }
 
 /* Fade-up reveal */
@@ -455,10 +465,20 @@ p {
   }
 }
 
+/* No JS: the nav never gets its scrolled background from script, so give it one. */
+html:not(.js) .nav {
+  background: rgba(14, 15, 15, 0.92);
+}
+
 /* No JS on small screens: show the links inline so the site stays navigable. */
 @media (max-width: 899px) {
   html:not(.js) .nav {
-    background: rgba(14, 15, 15, 0.92);
+    position: sticky;
+    top: 0;
+  }
+
+  html:not(.js) .hero__content {
+    padding-top: 24px;
   }
 
   html:not(.js) .nav__inner {
@@ -494,16 +514,22 @@ p {
   z-index: 90;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: safe center;
   padding: calc(var(--nav-h) + 16px) var(--gutter) 32px;
   background: var(--bg);
   opacity: 0;
-  transition: opacity 0.35s ease;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0s linear 0.35s;
   overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .menu.is-open {
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
 }
 
 .menu__link,
@@ -518,7 +544,7 @@ p {
 .menu__link {
   padding: 6px 0;
   font-family: var(--font-display);
-  font-size: clamp(3rem, 12vw, 5.5rem);
+  font-size: clamp(2.5rem, min(12vw, 14vh), 5.5rem);
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: -0.01em;
@@ -550,7 +576,8 @@ p {
   color: var(--muted);
 }
 
-body.menu-open {
+html.menu-open,
+html.menu-open body {
   overflow: hidden;
 }
 
@@ -574,11 +601,56 @@ body.menu-open {
   top: 0;
   display: flex;
   align-items: center;
+  align-items: safe center;
   height: 100vh;
   height: 100svh;
   min-height: 600px;
   overflow: hidden;
   background: var(--bg);
+}
+
+/* Short viewports: keep the whole hero inside the pin. */
+@media (min-width: 900px) and (max-height: 800px) {
+  .hero .hero__title {
+    font-size: min(clamp(4rem, 14vw, 13rem), 20vh);
+  }
+
+  .hero .hero__eyebrow {
+    margin-bottom: 16px;
+  }
+
+  .hero .hero__sub,
+  .hero .hero__actions {
+    margin-top: 24px;
+  }
+
+  .hero .hero__content {
+    padding-bottom: 110px;
+  }
+}
+
+/* Landscape phones: no room to pin, so the hero behaves like a normal section. */
+@media (max-height: 500px) {
+  .js .hero {
+    height: auto;
+    min-height: 100svh;
+  }
+
+  .hero__pin {
+    position: relative;
+    height: auto;
+    min-height: 100svh;
+  }
+
+  .js .marquee {
+    transform: none !important;
+  }
+
+  .hero__content {
+    transform: none !important;
+    opacity: 1 !important;
+    padding-bottom: 100px;
+  }
 }
 
 .hero__grain {
@@ -630,6 +702,7 @@ body.menu-open {
 .hero__title {
   font-size: clamp(4rem, 14vw, 13rem);
   line-height: 0.9;
+  text-wrap: balance;
 }
 
 .hero__line {
@@ -674,6 +747,12 @@ body.menu-open {
   margin-top: 36px;
   transition: opacity 0.7s ease, transform 0.7s var(--ease-out);
   transition-delay: 0.5s;
+}
+
+@media (max-width: 479px) {
+  .hero__actions .btn {
+    flex: 1 1 100%;
+  }
 }
 
 .js .hero:not(.is-ready) .hero__sub,
@@ -741,7 +820,7 @@ body.menu-open {
    -------------------------------------------------------------------------- */
 
 .stats {
-  border-bottom: 2px solid var(--line);
+  border-bottom: 0;
 }
 
 .stats__grid {
@@ -798,6 +877,10 @@ body.menu-open {
 
   .stat:first-child {
     padding-left: 0;
+  }
+
+  .stat:nth-child(even) {
+    padding-left: 32px;
   }
 
   .stat + .stat {
@@ -958,7 +1041,12 @@ body.menu-open {
     display: inline-block;
   }
 
+  .programs__sticky.is-last .programs__hint {
+    opacity: 0;
+  }
+
   .programs__hint {
+    transition: opacity 0.3s ease;
     margin-top: 24px;
     font-weight: 600;
     font-size: 12px;
@@ -993,6 +1081,24 @@ body.menu-open {
     max-height: 52vh;
     aspect-ratio: 3 / 2;
   }
+
+  html:not(.js) .programs__sticky {
+    display: none;
+  }
+
+  html:not(.js) .programs__list {
+    grid-column: 1 / -1;
+  }
+
+  html:not(.js) .program__head {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0 0 24px;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1025,13 +1131,14 @@ body.menu-open {
   scroll-snap-type: x mandatory;
   scroll-padding-left: var(--gutter);
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted) transparent;
   padding-inline: var(--gutter);
-  padding-bottom: 8px;
+  padding-bottom: 12px;
 }
 
-.coaches__viewport::-webkit-scrollbar {
-  display: none;
+.coaches__viewport:focus-visible {
+  outline-offset: -2px;
 }
 
 .coaches__track {
@@ -1053,17 +1160,22 @@ body.menu-open {
 .coach__media {
   aspect-ratio: 3 / 4;
   background: var(--bg-2);
+  transition: transform 0.7s var(--ease-out);
 }
 
 .coach__media img {
   filter: grayscale(1);
-  transition: filter 0.5s ease, transform 0.7s var(--ease-out);
+  transition: filter 0.5s ease;
+}
+
+.coach:hover .coach__media,
+.coach:focus-within .coach__media {
+  transform: scale(1.03);
 }
 
 .coach:hover .coach__media img,
 .coach:focus-within .coach__media img {
   filter: grayscale(0);
-  --s: 1.03;
 }
 
 .coach__name {
@@ -1123,7 +1235,7 @@ body.menu-open {
   }
 
   .coaches__viewport {
-    padding-inline: max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));
+    padding-inline: max(var(--gutter), calc((100% - var(--max)) / 2));
   }
 
   .coaches__track {
@@ -1131,38 +1243,74 @@ body.menu-open {
   }
 
   .coach {
-    width: clamp(260px, 34vh, 380px);
+    width: clamp(260px, 36vh, 400px);
     max-width: none;
+  }
+
+  .coaches.is-unpinned .coaches__progress {
+    display: none;
   }
 }
 
 @media (min-width: 900px) and (prefers-reduced-motion: no-preference) {
-  .js .coaches {
+  .js .coaches:not(.is-unpinned) {
     height: 200vh;
   }
 
-  .js .coaches__pin {
+  .js .coaches:not(.is-unpinned) .coaches__pin {
     position: sticky;
     top: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    justify-content: safe center;
     height: 100vh;
     padding-block: calc(var(--nav-h) + 24px) 32px;
     overflow: hidden;
   }
 
-  .js .coaches__head {
+  .js .coaches:not(.is-unpinned) .coaches__head {
     margin-bottom: 32px;
   }
 
-  .js .coaches__viewport {
+  .js .coaches:not(.is-unpinned) .coaches__viewport {
     overflow: visible;
     scroll-snap-type: none;
+    scrollbar-width: none;
+    padding-bottom: 0;
   }
 
-  .js .coaches__track {
+  .js .coaches:not(.is-unpinned) .coaches__track {
     will-change: transform;
+  }
+}
+
+/* Short desktop viewports: shrink the pinned coaches block so it fits. */
+@media (min-width: 900px) and (max-height: 800px) {
+  .js .coaches:not(.is-unpinned) .coaches__pin {
+    padding-top: calc(var(--nav-h) + 8px);
+  }
+
+  .js .coaches:not(.is-unpinned) .coaches__head {
+    margin-bottom: 16px;
+  }
+
+  .js .coaches:not(.is-unpinned) .coaches__head .h2 {
+    font-size: clamp(2.5rem, 7vh, 6rem);
+  }
+
+  .js .coaches:not(.is-unpinned) .coach {
+    width: clamp(200px, 30vh, 380px);
+  }
+
+  .js .coaches:not(.is-unpinned) .coach__bio {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 900px) and (max-height: 680px) {
+  .js .coaches:not(.is-unpinned) .coaches__lede {
+    display: none;
   }
 }
 
@@ -1340,7 +1488,7 @@ body.menu-open {
 }
 
 .tier__name {
-  font-size: 2.25rem;
+  font-size: clamp(1.75rem, 3.1vw, 2.25rem);
 }
 
 .tier__price {
@@ -1409,6 +1557,12 @@ body.menu-open {
   .tier--featured {
     transform: translateY(-16px);
   }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .tier {
+    padding: 40px 28px;
+  }
 
   .js .tier--featured:not(.is-visible) {
     transform: translateY(8px);
@@ -1444,9 +1598,9 @@ body.menu-open {
 
 .quote__mark {
   display: block;
-  height: 0.55em;
+  height: 0.5em;
   font-family: var(--font-display);
-  font-size: 6rem;
+  font-size: clamp(8rem, 10vw, 11rem);
   line-height: 0.8;
   color: var(--accent);
 }
@@ -1659,6 +1813,13 @@ body.menu-open {
 
 .footer__hours dd {
   margin: 0;
+  white-space: nowrap;
+}
+
+.footer__note {
+  margin-top: 10px;
+  font-size: 0.8125rem;
+  color: var(--muted);
 }
 
 .footer__address {
@@ -1725,7 +1886,7 @@ body.menu-open {
   }
 
   .footer__col:nth-child(2) {
-    grid-column: 6 / span 2;
+    grid-column: 5 / span 3;
   }
 
   .footer__col:nth-child(3) {
@@ -1900,11 +2061,36 @@ body.menu-open {
     transform: none;
   }
 
-  .programs__sticky {
-    position: static;
-  }
-
   .cursor {
     display: none !important;
+  }
+
+  .has-cursor,
+  .has-cursor * {
+    cursor: auto !important;
+  }
+
+  .coach__media {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 900px) {
+  .programs__sticky {
+    display: none;
+  }
+
+  .programs__list {
+    grid-column: 1 / -1;
+  }
+
+  .program__head {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0 0 24px;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
   }
 }

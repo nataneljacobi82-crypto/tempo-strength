@@ -4,12 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tempo Strength Club — Strength &amp; Conditioning</title>
-  <meta name="description" content="Tempo Strength Club is a coached strength and conditioning gym for people who show up. Barbell strength, conditioning, Olympic lifting and mobility across 60 classes a week. Your first week is free.">
+  <meta name="description" content="Your first week is free. Coached strength, conditioning, Olympic lifting and mobility, 60 classes a week, for people who show up.">
   <meta name="theme-color" content="#0E0F0F">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Tempo Strength Club">
   <meta property="og:title" content="Tempo Strength Club — Strength &amp; Conditioning">
-  <meta property="og:description" content="Coached strength and conditioning for people who show up. Four programs, fourteen coaches, sixty classes a week. Your first week is free.">
+  <meta property="og:description" content="Coached strength and conditioning for people who show up. 4 programs, 14 coaches, 60 classes a week. Your first week is free.">
+  <!-- Make og:url, og:image and twitter:image absolute once the site has a domain. -->
+  <meta property="og:url" content="/">
   <meta property="og:image" content="/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -50,7 +52,7 @@
     </div>
   </header>
 
-  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" hidden>
+  <div class="menu" id="menu" role="dialog" aria-label="Site menu" hidden>
     <nav class="menu__nav" aria-label="Mobile">
       <a class="menu__link" href="#programs" style="--i:0">Programs</a>
       <a class="menu__link" href="#coaches" style="--i:1">Coaches</a>
@@ -138,7 +140,7 @@
                 <p class="program__desc">Forty-five minutes of intervals on sleds, rowers and assault bikes. Scaled to your engine, never to the person next to you.</p>
                 <p class="program__label">A session looks like</p>
                 <ul class="program__list">
-                  <li>Heart-rate capped warm-up on the bike or rower</li>
+                  <li>Heart-rate-capped warm-up on the bike or rower</li>
                   <li>Three to five interval blocks with coached pacing</li>
                   <li>Scores tracked week to week in the app</li>
                 </ul>
@@ -187,7 +189,7 @@
           <p class="section__lede coaches__lede" data-reveal>Fourteen coaches on staff. Here are five you will meet in your first week.</p>
           <div class="coaches__progress" aria-hidden="true"><span class="coaches__progress-bar"></span></div>
         </div>
-        <div class="coaches__viewport">
+        <div class="coaches__viewport" role="region" aria-label="Coaches, scrolls sideways">
           <ul class="coaches__track" role="list">
             <li class="coach">
               <div class="coach__media parallax">
@@ -211,7 +213,7 @@
               </div>
               <h3 class="coach__name">Priya Natarajan</h3>
               <p class="coach__role">Conditioning</p>
-              <p class="coach__bio">Builds engines. Will get you a faster 500 metres than you think you have.</p>
+              <p class="coach__bio">Builds engines. Will get you a faster 500 meters than you think you have.</p>
             </li>
             <li class="coach">
               <div class="coach__media parallax">
@@ -239,8 +241,9 @@
       <div class="container">
         <div class="section__head">
           <h2 class="h2" id="schedule-title" data-split>Weekly schedule</h2>
-          <p class="section__lede" data-reveal>Sixty classes a week across six daily slots. Book in the app or just walk in.</p>
+          <p class="section__lede" data-reveal>The core timetable, six slots a day. Book in the app or just walk in.</p>
         </div>
+        <p class="sr-only" id="filter-status" aria-live="polite"></p>
         <div class="filters" role="group" aria-label="Filter the schedule by program" data-reveal>
           <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
           <button class="filter" type="button" data-filter="strength" aria-pressed="false">Strength</button>
@@ -248,7 +251,7 @@
           <button class="filter" type="button" data-filter="olympic" aria-pressed="false">Olympic Lifting</button>
           <button class="filter" type="button" data-filter="mobility" aria-pressed="false">Mobility</button>
         </div>
-        <div class="schedule__scroller" tabindex="0" role="region" aria-label="Weekly schedule, scrolls sideways on small screens" data-reveal>
+        <div class="schedule__scroller" role="region" aria-label="Weekly schedule, scrolls sideways on small screens" data-reveal>
           <table class="schedule__table">
             <caption class="sr-only">Classes by day and start time, with coach initials</caption>
             <thead>
@@ -271,8 +274,8 @@
                 <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">DR</span></td>
                 <td class="cell" data-type="conditioning"><span class="cell__name">Conditioning</span><span class="cell__coach">PN</span></td>
                 <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">LO</span></td>
-                <td class="cell cell--empty" data-type="none"><span class="sr-only">Closed</span><span aria-hidden="true">—</span></td>
-                <td class="cell cell--empty" data-type="none"><span class="sr-only">Closed</span><span aria-hidden="true">—</span></td>
+                <td class="cell cell--empty" data-type="none"><span class="sr-only">No class</span><span aria-hidden="true">—</span></td>
+                <td class="cell cell--empty" data-type="none"><span class="sr-only">No class</span><span aria-hidden="true">—</span></td>
               </tr>
               <tr>
                 <th scope="row" class="schedule__time">7:00</th>
@@ -282,7 +285,7 @@
                 <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">DR</span></td>
                 <td class="cell" data-type="conditioning"><span class="cell__name">Conditioning</span><span class="cell__coach">PN</span></td>
                 <td class="cell" data-type="conditioning"><span class="cell__name">Conditioning</span><span class="cell__coach">PN</span></td>
-                <td class="cell" data-type="open"><span class="cell__name">Open gym</span><span class="cell__coach">Staffed</span></td>
+                <td class="cell" data-type="open"><span class="cell__name">Open Gym</span><span class="cell__coach">Staffed</span></td>
               </tr>
               <tr>
                 <th scope="row" class="schedule__time">12:00</th>
@@ -292,7 +295,7 @@
                 <td class="cell" data-type="olympic"><span class="cell__name">Olympic Lifting</span><span class="cell__coach">MH</span></td>
                 <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">LO</span></td>
                 <td class="cell" data-type="olympic"><span class="cell__name">Olympic Lifting</span><span class="cell__coach">MH</span></td>
-                <td class="cell" data-type="open"><span class="cell__name">Open gym</span><span class="cell__coach">Staffed</span></td>
+                <td class="cell" data-type="open"><span class="cell__name">Open Gym</span><span class="cell__coach">Staffed</span></td>
               </tr>
               <tr>
                 <th scope="row" class="schedule__time">17:00</th>
@@ -301,8 +304,8 @@
                 <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">LO</span></td>
                 <td class="cell" data-type="olympic"><span class="cell__name">Olympic Lifting</span><span class="cell__coach">MH</span></td>
                 <td class="cell" data-type="conditioning"><span class="cell__name">Conditioning</span><span class="cell__coach">PN</span></td>
-                <td class="cell cell--empty" data-type="none"><span class="sr-only">Closed</span><span aria-hidden="true">—</span></td>
-                <td class="cell cell--empty" data-type="none"><span class="sr-only">Closed</span><span aria-hidden="true">—</span></td>
+                <td class="cell cell--empty" data-type="none"><span class="sr-only">No class</span><span aria-hidden="true">—</span></td>
+                <td class="cell cell--empty" data-type="none"><span class="sr-only">No class</span><span aria-hidden="true">—</span></td>
               </tr>
               <tr>
                 <th scope="row" class="schedule__time">18:00</th>
@@ -311,8 +314,8 @@
                 <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">DR</span></td>
                 <td class="cell" data-type="conditioning"><span class="cell__name">Conditioning</span><span class="cell__coach">PN</span></td>
                 <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">DR</span></td>
-                <td class="cell cell--empty" data-type="none"><span class="sr-only">Closed</span><span aria-hidden="true">—</span></td>
-                <td class="cell cell--empty" data-type="none"><span class="sr-only">Closed</span><span aria-hidden="true">—</span></td>
+                <td class="cell cell--empty" data-type="none"><span class="sr-only">No class</span><span aria-hidden="true">—</span></td>
+                <td class="cell cell--empty" data-type="none"><span class="sr-only">No class</span><span aria-hidden="true">—</span></td>
               </tr>
               <tr>
                 <th scope="row" class="schedule__time">19:00</th>
@@ -321,13 +324,13 @@
                 <td class="cell" data-type="mobility"><span class="cell__name">Mobility</span><span class="cell__coach">JW</span></td>
                 <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">LO</span></td>
                 <td class="cell" data-type="mobility"><span class="cell__name">Mobility</span><span class="cell__coach">JW</span></td>
-                <td class="cell cell--empty" data-type="none"><span class="sr-only">Closed</span><span aria-hidden="true">—</span></td>
-                <td class="cell cell--empty" data-type="none"><span class="sr-only">Closed</span><span aria-hidden="true">—</span></td>
+                <td class="cell cell--empty" data-type="none"><span class="sr-only">No class</span><span aria-hidden="true">—</span></td>
+                <td class="cell cell--empty" data-type="none"><span class="sr-only">No class</span><span aria-hidden="true">—</span></td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p class="schedule__legend" data-reveal>DR Dana Reyes · PN Priya Natarajan · MH Marcus Hale · LO Lena Okafor · JW Jonah Weiss. Weekend floor opens at 7:00.</p>
+        <p class="schedule__legend" data-reveal>DR Dana Reyes · PN Priya Natarajan · MH Marcus Hale · LO Lena Okafor · JW Jonah Weiss. Weekend classes start at 7:00; keycard members train any time.</p>
       </div>
     </section>
 
@@ -388,11 +391,12 @@
       <div class="container">
         <div class="section__head">
           <h2 class="h2" id="testimonials-title" data-split>From the floor</h2>
+          <p class="section__lede" data-reveal>Three members, in their own words.</p>
         </div>
         <div class="quotes">
           <figure class="quote" data-reveal style="--d:0ms">
             <span class="quote__mark" aria-hidden="true">“</span>
-            <blockquote><p>I came in with a 60 kg deadlift and a bad back. Fourteen months later I pulled 140 and the back is the least of my problems.</p></blockquote>
+            <blockquote><p>I came in with a 60 kg deadlift and a bad back. Fourteen months later I pulled 140 kg and the back is the least of my problems.</p></blockquote>
             <figcaption><span class="quote__name">Mara Lindqvist</span><span class="quote__since">Member since 2023</span></figcaption>
           </figure>
           <figure class="quote" data-reveal style="--d:100ms">
@@ -416,7 +420,7 @@
           <h2 class="h2 cta__title" id="cta-title" data-split>Your first week is free.</h2>
           <p class="cta__lede" data-reveal>Seven days, every class, no card on file. Tell us where to send the details and a coach will set up your first session.</p>
         </div>
-        <form class="form" id="trial-form" novalidate data-reveal>
+        <form class="form" id="trial-form" action="#cta" method="get" data-reveal>
           <div class="field">
             <label for="f-name">Name</label>
             <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
@@ -447,7 +451,7 @@
       <div class="footer__grid">
         <div class="footer__col footer__brand">
           <a class="footer__wordmark" href="#top">TEMPO</a>
-          <p>Strength and conditioning for people who show up. Coached classes, an open floor and no nonsense.</p>
+          <p>Strength and conditioning for people who show up.</p>
         </div>
         <div class="footer__col">
           <h3 class="footer__title">Hours</h3>
@@ -455,11 +459,12 @@
             <div><dt>Mon–Fri</dt><dd>5:00–21:00</dd></div>
             <div><dt>Sat–Sun</dt><dd>7:00–14:00</dd></div>
           </dl>
+          <p class="footer__note">Keycard members: 24/7.</p>
         </div>
         <div class="footer__col">
           <h3 class="footer__title">Contact</h3>
           <address class="footer__address">
-            4120 Meridian Ave, Suite 2<br>
+            <span class="nowrap">4120 Meridian Ave, Suite 2</span><br>
             <a href="tel:+15550104120">(555) 010-4120</a><br>
             <a href="mailto:hello@tempostrength.club">hello@tempostrength.club</a>
           </address>
