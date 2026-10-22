@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tempo Strength Club — Strength &amp; Conditioning</title>
+  <meta name="description" content="Your first week is free. Coached strength, conditioning, Olympic lifting and mobility, 60 classes a week, for people who show up.">
+  <meta name="theme-color" content="#0E0F0F">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tempo Strength Club">
+  <meta property="og:title" content="Tempo Strength Club — Strength &amp; Conditioning">
+  <meta property="og:description" content="Coached strength and conditioning for people who show up. 4 programs, 14 coaches, 60 classes a week. Your first week is free.">
+  <!-- Make og:url, og:image and twitter:image absolute once the site has a domain. -->
+  <meta property="og:url" content="/">
+  <meta property="og:image" content="/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tempo Strength Club — Strength &amp; Conditioning">
+  <meta name="twitter:description" content="Coached strength and conditioning for people who show up. Your first week is free.">
+  <meta name="twitter:image" content="/og-image.png">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://picsum.photos">
+  <link rel="preconnect" href="https://fastly.picsum.photos">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" data-fonts>
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="cursor" aria-hidden="true"></div>
+
+  <header class="nav" id="top">
+    <div class="nav__inner container">
+      <a class="nav__brand" href="#top" aria-label="Tempo Strength Club, back to top">TEMPO</a>
+      <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="#programs">Programs</a>
+        <a class="nav__link" href="#coaches">Coaches</a>
+        <a class="nav__link" href="#schedule">Schedule</a>
+        <a class="nav__link" href="#membership">Membership</a>
+        <a class="btn btn--primary btn--sm" href="#cta">Free Trial</a>
+      </nav>
+      <button class="nav__burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+        <svg class="burger" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true" focusable="false">
+          <rect class="burger__top" x="2" y="8" width="24" height="2" fill="currentColor"/>
+          <rect class="burger__bottom" x="2" y="18" width="24" height="2" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" role="dialog" aria-label="Site menu" hidden>
+    <nav class="menu__nav" aria-label="Mobile">
+      <a class="menu__link" href="#programs" style="--i:0">Programs</a>
+      <a class="menu__link" href="#coaches" style="--i:1">Coaches</a>
+      <a class="menu__link" href="#schedule" style="--i:2">Schedule</a>
+      <a class="menu__link" href="#membership" style="--i:3">Membership</a>
+      <div class="menu__cta" style="--i:4"><a class="btn btn--primary" href="#cta">Free Trial</a></div>
+    </nav>
+    <p class="menu__meta">Mon–Fri 5:00–21:00 · Sat–Sun 7:00–14:00</p>
+  </div>
+
+  <main id="main">
+
+    <!-- 1. HERO -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__pin">
+        <div class="hero__grain" aria-hidden="true"></div>
+        <div class="hero__content container">
+          <p class="hero__eyebrow">Tempo Strength Club · Est. 2017</p>
+          <h1 class="hero__title split" id="hero-title">
+            <span class="hero__line"><span class="w"><span class="w__i" style="--i:0">TRAIN</span></span> <span class="w"><span class="w__i" style="--i:1">WITH</span></span></span>
+            <span class="hero__line"><span class="w"><span class="w__i" style="--i:2">INTENT.<span class="hero__underline" aria-hidden="true"></span></span></span></span>
+          </h1>
+          <p class="hero__sub">Strength and conditioning for people who show up.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#cta">Start free trial</a>
+            <a class="btn btn--secondary" href="#schedule">See schedule</a>
+          </div>
+        </div>
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee__track">
+            <span class="marquee__content">STRENGTH · CONDITIONING · OLYMPIC LIFTING · MOBILITY · OPEN GYM · STRENGTH · CONDITIONING · OLYMPIC LIFTING · MOBILITY · OPEN GYM · </span>
+            <span class="marquee__content">STRENGTH · CONDITIONING · OLYMPIC LIFTING · MOBILITY · OPEN GYM · STRENGTH · CONDITIONING · OLYMPIC LIFTING · MOBILITY · OPEN GYM · </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. STATS -->
+    <section class="stats" aria-label="Club at a glance">
+      <div class="container">
+        <ul class="stats__grid" role="list">
+          <li class="stat"><span class="stat__num" data-count="1200" data-suffix="+">1,200+</span><span class="stat__label">Members</span></li>
+          <li class="stat"><span class="stat__num" data-count="14">14</span><span class="stat__label">Coaches</span></li>
+          <li class="stat"><span class="stat__num" data-count="60">60</span><span class="stat__label">Classes / week</span></li>
+          <li class="stat"><span class="stat__num" data-count="9">9</span><span class="stat__label">Years</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. PROGRAMS -->
+    <section class="section programs" id="programs" aria-labelledby="programs-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2" id="programs-title" data-split>Four ways to train</h2>
+          <p class="section__lede" data-reveal>Every class is coached. Every program is progressive. Pick one lane or rotate through all four.</p>
+        </div>
+        <div class="programs__layout">
+          <div class="programs__sticky" aria-hidden="true">
+            <div class="programs__index"><span class="programs__index-cur">01</span><span class="programs__index-total">/ 04</span></div>
+            <div class="programs__current"><span class="programs__current-inner">Strength</span></div>
+            <p class="programs__hint">Keep scrolling</p>
+          </div>
+          <div class="programs__list">
+            <article class="program" data-index="01" data-name="Strength">
+              <div class="program__head"><span class="program__index" aria-hidden="true">01</span><h3 class="program__name">Strength</h3></div>
+              <div class="program__media parallax" data-reveal>
+                <img src="https://picsum.photos/seed/tempo-strength/900/600" width="900" height="600" alt="Lifter setting up under a loaded barbell in the strength room" loading="lazy" decoding="async">
+              </div>
+              <div class="program__body" data-reveal>
+                <p class="program__desc">Barbell-focused training built on progressive overload. Squat, press, hinge and pull, coached in groups of eight so nobody gets lost in the crowd.</p>
+                <p class="program__label">A session looks like</p>
+                <ul class="program__list">
+                  <li>Ten minutes of barbell warm-up and movement prep</li>
+                  <li>One main lift, working up to a coached top set</li>
+                  <li>Two accessory blocks, logged in the app</li>
+                </ul>
+              </div>
+            </article>
+            <article class="program" data-index="02" data-name="Conditioning">
+              <div class="program__head"><span class="program__index" aria-hidden="true">02</span><h3 class="program__name">Conditioning</h3></div>
+              <div class="program__media parallax" data-reveal>
+                <img src="https://picsum.photos/seed/tempo-conditioning/900/600" width="900" height="600" alt="Row of rowers and assault bikes lined up for a conditioning class" loading="lazy" decoding="async">
+              </div>
+              <div class="program__body" data-reveal>
+                <p class="program__desc">Forty-five minutes of intervals on sleds, rowers and assault bikes. Scaled to your engine, never to the person next to you.</p>
+                <p class="program__label">A session looks like</p>
+                <ul class="program__list">
+                  <li>Heart-rate-capped warm-up on the bike or rower</li>
+                  <li>Three to five interval blocks with coached pacing</li>
+                  <li>Scores tracked week to week in the app</li>
+                </ul>
+              </div>
+            </article>
+            <article class="program" data-index="03" data-name="Olympic Lifting">
+              <div class="program__head"><span class="program__index" aria-hidden="true">03</span><h3 class="program__name">Olympic Lifting</h3></div>
+              <div class="program__media parallax" data-reveal>
+                <img src="https://picsum.photos/seed/tempo-olympic/900/600" width="900" height="600" alt="Athlete catching a snatch overhead on a lifting platform" loading="lazy" decoding="async">
+              </div>
+              <div class="program__body" data-reveal>
+                <p class="program__desc">Snatch and clean and jerk technique for every level, from your first PVC pipe to a competition total. Small platforms, lots of eyes on your bar path.</p>
+                <p class="program__label">A session looks like</p>
+                <ul class="program__list">
+                  <li>Position drills from the floor, the hang and the blocks</li>
+                  <li>Percentage work off your current training max</li>
+                  <li>Video review of your heaviest set before you leave</li>
+                </ul>
+              </div>
+            </article>
+            <article class="program" data-index="04" data-name="Mobility">
+              <div class="program__head"><span class="program__index" aria-hidden="true">04</span><h3 class="program__name">Mobility</h3></div>
+              <div class="program__media parallax" data-reveal>
+                <img src="https://picsum.photos/seed/tempo-mobility/900/600" width="900" height="600" alt="Member working through a deep hip stretch on the mobility floor" loading="lazy" decoding="async">
+              </div>
+              <div class="program__body" data-reveal>
+                <p class="program__desc">Thirty minutes of joint prep, flexibility and recovery work. The class that makes the other three possible.</p>
+                <p class="program__label">A session looks like</p>
+                <ul class="program__list">
+                  <li>Hips, ankles and thoracic spine, every single session</li>
+                  <li>Loaded stretching and controlled articular rotations</li>
+                  <li>Breathing and down-regulation to finish</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. COACHES -->
+    <section class="coaches" id="coaches" aria-labelledby="coaches-title">
+      <div class="coaches__pin">
+        <div class="container coaches__head">
+          <h2 class="h2" id="coaches-title" data-split>The coaches</h2>
+          <p class="section__lede coaches__lede" data-reveal>Fourteen coaches on staff. Here are five you will meet in your first week.</p>
+          <div class="coaches__progress" aria-hidden="true"><span class="coaches__progress-bar"></span></div>
+        </div>
+        <div class="coaches__viewport" role="region" aria-label="Coaches, scrolls sideways">
+          <ul class="coaches__track" role="list">
+            <li class="coach">
+              <div class="coach__media parallax">
+                <img src="https://picsum.photos/seed/coach1/600/800" width="600" height="800" alt="Portrait of Dana Reyes, head coach" loading="lazy" decoding="async">
+              </div>
+              <h3 class="coach__name">Dana Reyes</h3>
+              <p class="coach__role">Head coach · Strength</p>
+              <p class="coach__bio">Writes the barbell program and still pulls at 5 a.m. on Tuesdays.</p>
+            </li>
+            <li class="coach">
+              <div class="coach__media parallax">
+                <img src="https://picsum.photos/seed/coach2/600/800" width="600" height="800" alt="Portrait of Marcus Hale, Olympic lifting coach" loading="lazy" decoding="async">
+              </div>
+              <h3 class="coach__name">Marcus Hale</h3>
+              <p class="coach__role">Olympic Lifting</p>
+              <p class="coach__bio">Former national-level lifter, obsessed with the first pull.</p>
+            </li>
+            <li class="coach">
+              <div class="coach__media parallax">
+                <img src="https://picsum.photos/seed/coach3/600/800" width="600" height="800" alt="Portrait of Priya Natarajan, conditioning coach" loading="lazy" decoding="async">
+              </div>
+              <h3 class="coach__name">Priya Natarajan</h3>
+              <p class="coach__role">Conditioning</p>
+              <p class="coach__bio">Builds engines. Will get you a faster 500 meters than you think you have.</p>
+            </li>
+            <li class="coach">
+              <div class="coach__media parallax">
+                <img src="https://picsum.photos/seed/coach4/600/800" width="600" height="800" alt="Portrait of Jonah Weiss, mobility coach" loading="lazy" decoding="async">
+              </div>
+              <h3 class="coach__name">Jonah Weiss</h3>
+              <p class="coach__role">Mobility</p>
+              <p class="coach__bio">Physio turned coach. Fixes the things that hurt when you squat.</p>
+            </li>
+            <li class="coach">
+              <div class="coach__media parallax">
+                <img src="https://picsum.photos/seed/coach5/600/800" width="600" height="800" alt="Portrait of Lena Okafor, nutrition and programming coach" loading="lazy" decoding="async">
+              </div>
+              <h3 class="coach__name">Lena Okafor</h3>
+              <p class="coach__role">Nutrition and Programming</p>
+              <p class="coach__bio">Writes every individualized plan and reads every food log.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SCHEDULE -->
+    <section class="section schedule" id="schedule" aria-labelledby="schedule-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2" id="schedule-title" data-split>Weekly schedule</h2>
+          <p class="section__lede" data-reveal>The core timetable, six slots a day. Book in the app or just walk in.</p>
+        </div>
+        <p class="sr-only" id="filter-status" aria-live="polite"></p>
+        <div class="filters" role="group" aria-label="Filter the schedule by program" data-reveal>
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" type="button" data-filter="strength" aria-pressed="false">Strength</button>
+          <button class="filter" type="button" data-filter="conditioning" aria-pressed="false">Conditioning</button>
+          <button class="filter" type="button" data-filter="olympic" aria-pressed="false">Olympic Lifting</button>
+          <button class="filter" type="button" data-filter="mobility" aria-pressed="false">Mobility</button>
+        </div>
+        <div class="schedule__scroller" role="region" aria-label="Weekly schedule, scrolls sideways on small screens" data-reveal>
+          <table class="schedule__table">
+            <caption class="sr-only">Classes by day and start time, with coach initials</caption>
+            <thead>
+              <tr>
+                <th scope="col" class="schedule__time">Time</th>
+                <th scope="col">Mon</th>
+                <th scope="col">Tue</th>
+                <th scope="col">Wed</th>
+                <th scope="col">Thu</th>
+                <th scope="col">Fri</th>
+                <th scope="col">Sat</th>
+                <th scope="col">Sun</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="schedule__time">6:00</th>
+                <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">DR</span></td>
+                <td class="cell" data-type="conditioning"><span class="cell__name">Conditioning</span><span class="cell__coach">PN</span></td>
+                <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">DR</span></td>
+                <td class="cell" data-type="conditioning"><span class="cell__name">Conditioning</span><span class="cell__coach">PN</span></td>
+                <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">LO</span></td>
+                <td class="cell cell--empty" data-type="none"><span class="sr-only">No class</span><span aria-hidden="true">—</span></td>
+                <td class="cell cell--empty" data-type="none"><span class="sr-only">No class</span><span aria-hidden="true">—</span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="schedule__time">7:00</th>
+                <td class="cell" data-type="conditioning"><span class="cell__name">Conditioning</span><span class="cell__coach">PN</span></td>
+                <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">DR</span></td>
+                <td class="cell" data-type="conditioning"><span class="cell__name">Conditioning</span><span class="cell__coach">PN</span></td>
+                <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">DR</span></td>
+                <td class="cell" data-type="conditioning"><span class="cell__name">Conditioning</span><span class="cell__coach">PN</span></td>
+                <td class="cell" data-type="conditioning"><span class="cell__name">Conditioning</span><span class="cell__coach">PN</span></td>
+                <td class="cell" data-type="open"><span class="cell__name">Open Gym</span><span class="cell__coach">Staffed</span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="schedule__time">12:00</th>
+                <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">LO</span></td>
+                <td class="cell" data-type="olympic"><span class="cell__name">Olympic Lifting</span><span class="cell__coach">MH</span></td>
+                <td class="cell" data-type="conditioning"><span class="cell__name">Conditioning</span><span class="cell__coach">PN</span></td>
+                <td class="cell" data-type="olympic"><span class="cell__name">Olympic Lifting</span><span class="cell__coach">MH</span></td>
+                <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">LO</span></td>
+                <td class="cell" data-type="olympic"><span class="cell__name">Olympic Lifting</span><span class="cell__coach">MH</span></td>
+                <td class="cell" data-type="open"><span class="cell__name">Open Gym</span><span class="cell__coach">Staffed</span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="schedule__time">17:00</th>
+                <td class="cell" data-type="conditioning"><span class="cell__name">Conditioning</span><span class="cell__coach">PN</span></td>
+                <td class="cell" data-type="olympic"><span class="cell__name">Olympic Lifting</span><span class="cell__coach">MH</span></td>
+                <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">LO</span></td>
+                <td class="cell" data-type="olympic"><span class="cell__name">Olympic Lifting</span><span class="cell__coach">MH</span></td>
+                <td class="cell" data-type="conditioning"><span class="cell__name">Conditioning</span><span class="cell__coach">PN</span></td>
+                <td class="cell cell--empty" data-type="none"><span class="sr-only">No class</span><span aria-hidden="true">—</span></td>
+                <td class="cell cell--empty" data-type="none"><span class="sr-only">No class</span><span aria-hidden="true">—</span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="schedule__time">18:00</th>
+                <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">DR</span></td>
+                <td class="cell" data-type="conditioning"><span class="cell__name">Conditioning</span><span class="cell__coach">PN</span></td>
+                <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">DR</span></td>
+                <td class="cell" data-type="conditioning"><span class="cell__name">Conditioning</span><span class="cell__coach">PN</span></td>
+                <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">DR</span></td>
+                <td class="cell cell--empty" data-type="none"><span class="sr-only">No class</span><span aria-hidden="true">—</span></td>
+                <td class="cell cell--empty" data-type="none"><span class="sr-only">No class</span><span aria-hidden="true">—</span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="schedule__time">19:00</th>
+                <td class="cell" data-type="mobility"><span class="cell__name">Mobility</span><span class="cell__coach">JW</span></td>
+                <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">LO</span></td>
+                <td class="cell" data-type="mobility"><span class="cell__name">Mobility</span><span class="cell__coach">JW</span></td>
+                <td class="cell" data-type="strength"><span class="cell__name">Strength</span><span class="cell__coach">LO</span></td>
+                <td class="cell" data-type="mobility"><span class="cell__name">Mobility</span><span class="cell__coach">JW</span></td>
+                <td class="cell cell--empty" data-type="none"><span class="sr-only">No class</span><span aria-hidden="true">—</span></td>
+                <td class="cell cell--empty" data-type="none"><span class="sr-only">No class</span><span aria-hidden="true">—</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="schedule__legend" data-reveal>DR Dana Reyes · PN Priya Natarajan · MH Marcus Hale · LO Lena Okafor · JW Jonah Weiss. Weekend classes start at 7:00; keycard members train any time.</p>
+      </div>
+    </section>
+
+    <!-- 6. MEMBERSHIP -->
+    <section class="section membership" id="membership" aria-labelledby="membership-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2" id="membership-title" data-split>Pick your pace</h2>
+          <p class="section__lede" data-reveal>Three memberships. Same floor, same coaches, no upsells at the front desk.</p>
+        </div>
+        <div class="tiers">
+          <article class="tier" data-reveal style="--d:0ms">
+            <h3 class="tier__name">Open Gym</h3>
+            <p class="tier__price"><span class="tier__amount">$59</span><span class="tier__per">/mo</span></p>
+            <p class="tier__blurb">The floor, the racks and a key that works at 3 a.m.</p>
+            <ul class="tier__features">
+              <li><svg class="check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 10.5l4.5 4.5L17 5.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>24/7 keycard access</li>
+              <li><svg class="check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 10.5l4.5 4.5L17 5.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Open floor, every rack and platform</li>
+              <li><svg class="check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 10.5l4.5 4.5L17 5.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Locker room and showers</li>
+              <li><svg class="check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 10.5l4.5 4.5L17 5.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Member app for check-ins and logging</li>
+            </ul>
+            <a class="btn btn--secondary" href="#cta">Join Open Gym</a>
+          </article>
+          <article class="tier tier--featured" data-reveal style="--d:80ms">
+            <span class="tier__tag">Most popular</span>
+            <h3 class="tier__name">Unlimited Classes</h3>
+            <p class="tier__price"><span class="tier__amount">$129</span><span class="tier__per">/mo</span></p>
+            <p class="tier__blurb">Everything in Open Gym plus every class on the board.</p>
+            <ul class="tier__features">
+              <li><svg class="check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 10.5l4.5 4.5L17 5.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Everything in Open Gym</li>
+              <li><svg class="check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 10.5l4.5 4.5L17 5.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>All 60 weekly classes</li>
+              <li><svg class="check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 10.5l4.5 4.5L17 5.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>App booking and waitlists</li>
+              <li><svg class="check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 10.5l4.5 4.5L17 5.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>One movement assessment per quarter</li>
+              <li><svg class="check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 10.5l4.5 4.5L17 5.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Guest pass every month</li>
+            </ul>
+            <a class="btn btn--primary" href="#cta">Start free week</a>
+          </article>
+          <article class="tier" data-reveal style="--d:160ms">
+            <h3 class="tier__name">Coached Program</h3>
+            <p class="tier__price"><span class="tier__amount">$199</span><span class="tier__per">/mo</span></p>
+            <p class="tier__blurb">Everything in Unlimited plus a coach who knows your name and your numbers.</p>
+            <ul class="tier__features">
+              <li><svg class="check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 10.5l4.5 4.5L17 5.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Everything in Unlimited</li>
+              <li><svg class="check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 10.5l4.5 4.5L17 5.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Individualized programming, updated weekly</li>
+              <li><svg class="check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 10.5l4.5 4.5L17 5.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Monthly 1:1 check-in</li>
+              <li><svg class="check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 10.5l4.5 4.5L17 5.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Nutrition guidance</li>
+              <li><svg class="check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 10.5l4.5 4.5L17 5.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Priority booking on every class</li>
+            </ul>
+            <a class="btn btn--secondary" href="#cta">Apply for coaching</a>
+          </article>
+        </div>
+        <p class="membership__note" data-reveal>No contracts. Cancel anytime with 30 days notice.</p>
+      </div>
+    </section>
+
+    <!-- 7. TESTIMONIALS -->
+    <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-title" data-bg>
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2" id="testimonials-title" data-split>From the floor</h2>
+          <p class="section__lede" data-reveal>Three members, in their own words.</p>
+        </div>
+        <div class="quotes">
+          <figure class="quote" data-reveal style="--d:0ms">
+            <span class="quote__mark" aria-hidden="true">“</span>
+            <blockquote><p>I came in with a 60 kg deadlift and a bad back. Fourteen months later I pulled 140 kg and the back is the least of my problems.</p></blockquote>
+            <figcaption><span class="quote__name">Mara Lindqvist</span><span class="quote__since">Member since 2023</span></figcaption>
+          </figure>
+          <figure class="quote" data-reveal style="--d:100ms">
+            <span class="quote__mark" aria-hidden="true">“</span>
+            <blockquote><p>The 6 a.m. conditioning class is the only meeting I have never skipped. Priya knows my rower splits better than I do.</p></blockquote>
+            <figcaption><span class="quote__name">Theo Abrams</span><span class="quote__since">Member since 2021</span></figcaption>
+          </figure>
+          <figure class="quote" data-reveal style="--d:200ms">
+            <span class="quote__mark" aria-hidden="true">“</span>
+            <blockquote><p>Marcus rebuilt my snatch from the floor up. Took six weeks and a lot of ugly reps. Worth every one.</p></blockquote>
+            <figcaption><span class="quote__name">Celia Okonkwo</span><span class="quote__since">Member since 2022</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CTA -->
+    <section class="section cta" id="cta" aria-labelledby="cta-title" data-bg>
+      <div class="container cta__grid">
+        <div class="cta__copy">
+          <h2 class="h2 cta__title" id="cta-title" data-split>Your first week is free.</h2>
+          <p class="cta__lede" data-reveal>Seven days, every class, no card on file. Tell us where to send the details and a coach will set up your first session.</p>
+        </div>
+        <form class="form" id="trial-form" action="#cta" method="get" data-reveal>
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+            <p class="field__error" id="f-name-error" hidden>Enter your name so we know who to ask for.</p>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <p class="field__error" id="f-email-error" hidden>Enter a valid email address.</p>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(555) 010-4120" required>
+            <p class="field__error" id="f-phone-error" hidden>Enter a phone number we can text.</p>
+          </div>
+          <button class="btn btn--dark form__submit" type="submit">Claim my free week</button>
+          <p class="form__note">One text to book your first session. No sales calls, ever.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 9. FOOTER -->
+  <footer class="footer" aria-labelledby="footer-title">
+    <h2 class="sr-only" id="footer-title">Club information</h2>
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col footer__brand">
+          <a class="footer__wordmark" href="#top">TEMPO</a>
+          <p>Strength and conditioning for people who show up.</p>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__title">Hours</h3>
+          <dl class="footer__hours">
+            <div><dt>Mon–Fri</dt><dd>5:00–21:00</dd></div>
+            <div><dt>Sat–Sun</dt><dd>7:00–14:00</dd></div>
+          </dl>
+          <p class="footer__note">Keycard members: 24/7.</p>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__title">Contact</h3>
+          <address class="footer__address">
+            <span class="nowrap">4120 Meridian Ave, Suite 2</span><br>
+            <a href="tel:+15550104120">(555) 010-4120</a><br>
+            <a href="mailto:hello@tempostrength.club">hello@tempostrength.club</a>
+          </address>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__title">Follow</h3>
+          <ul class="footer__social" role="list">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Tempo Strength Club. All content is fictional.</p>
+        <p><a href="https://corivodigital.com" target="_blank" rel="noopener">Demo site by Corivo Digital</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
