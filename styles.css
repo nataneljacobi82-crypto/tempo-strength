@@ -15,6 +15,9 @@
   --font-display: "Anton", Impact, "Arial Narrow Bold", sans-serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --nav-h: 64px;
+  /* Demo banner height (measured by script); the nav sits below it until the page scrolls. */
+  --banner-h: 31px;
+  --nav-shift: var(--banner-h);
   --gutter: 24px;
   --max: 1440px;
   --section-pad: 72px;
@@ -342,6 +345,45 @@ p {
 }
 
 /* --------------------------------------------------------------------------
+   Demo banner
+   -------------------------------------------------------------------------- */
+
+.demo-banner {
+  width: 100%;
+  padding: 8px var(--gutter);
+  background: #C6FF3D;
+  color: #0E0F0F;
+  text-align: center;
+}
+
+.demo-banner__text {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.demo-banner__link {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.demo-banner__link:hover,
+.demo-banner__link:focus-visible {
+  text-decoration-thickness: 2px;
+}
+
+.demo-banner__link:focus-visible {
+  outline: 2px solid #0E0F0F;
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
    Nav
    -------------------------------------------------------------------------- */
 
@@ -353,6 +395,8 @@ p {
   display: flex;
   align-items: center;
   background: transparent;
+  /* Pushed below the demo banner at the top of the page; script shrinks the shift as the banner scrolls away. */
+  transform: translateY(var(--nav-shift));
   transition: background-color 0.4s, box-shadow 0.4s;
 }
 
@@ -475,6 +519,7 @@ html:not(.js) .nav {
   html:not(.js) .nav {
     position: sticky;
     top: 0;
+    transform: none;
   }
 
   html:not(.js) .hero__content {
@@ -515,7 +560,7 @@ html:not(.js) .nav {
   display: flex;
   flex-direction: column;
   justify-content: safe center;
-  padding: calc(var(--nav-h) + 16px) var(--gutter) 32px;
+  padding: calc(var(--nav-h) + var(--nav-shift) + 16px) var(--gutter) 32px;
   background: var(--bg);
   opacity: 0;
   visibility: hidden;

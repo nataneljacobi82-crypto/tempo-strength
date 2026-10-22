@@ -159,6 +159,28 @@
   }
 
   /* ------------------------------------------------------------------
+     Demo banner: the fixed nav sits below it at the top of the page and
+     rides up with it as the user scrolls, then covers it.
+     ------------------------------------------------------------------ */
+  var banner = $('.demo-banner');
+  var bannerH = 0;
+  var navShift = -1;
+
+  if (banner) {
+    measureTasks.push(function () {
+      bannerH = banner.offsetHeight;
+      html.style.setProperty('--banner-h', bannerH + 'px');
+      navShift = -1;
+    });
+    scrollTasks.push(function (y) {
+      var shift = Math.max(0, Math.round(bannerH - y));
+      if (shift === navShift) return;
+      navShift = shift;
+      html.style.setProperty('--nav-shift', shift + 'px');
+    });
+  }
+
+  /* ------------------------------------------------------------------
      Nav: translucent after 80px, active link by scroll position
      ------------------------------------------------------------------ */
   var nav = $('.nav');
@@ -321,7 +343,8 @@
         marquee.style.transform = 'translateY(0)';
         return;
       }
-      var p = clamp(y / dist, 0, 1);
+      // Progress from the point the pin engages (the hero starts below the demo banner).
+      var p = clamp(-hero.getBoundingClientRect().top / dist, 0, 1);
       var eased = easeOutCubic(p);
       heroContent.style.transform = 'scale(' + (1 - 0.15 * eased).toFixed(4) + ')';
       heroContent.style.opacity = (1 - 0.4 * eased).toFixed(3);
