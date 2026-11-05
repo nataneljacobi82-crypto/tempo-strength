@@ -29,7 +29,7 @@
   box.setAttribute('role', 'region');
   box.setAttribute('aria-label', 'Cookie notice');
   box.innerHTML =
-    '<p>This site doesn\'t use tracking cookies. <a href="/privacy.html">Privacy policy</a></p>' +
+    '<p>This site uses Plausible, a cookie-free analytics tool, and sets no tracking cookies. <a href="/privacy.html">Privacy policy</a></p>' +
     '<button type="button">Got it</button>';
   box.querySelector('button').addEventListener('click', function () {
     try { localStorage.setItem(KEY, '1'); } catch (e) {}
