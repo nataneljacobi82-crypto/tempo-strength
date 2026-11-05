@@ -1,0 +1,14 @@
+:root { --bg:#0e0f0f; --ink:#f3f1ea; --muted:#b5b4ae; --accent:#c6ff3d; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Inter", system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.65; }
+main { width: min(44rem, 100%); margin: 0 auto; padding: 4rem 1.25rem 5rem; }
+main.center { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+h1, h2 { font-family: "Anton", Georgia, serif; font-weight: 600; line-height: 1.1; }
+h1 { font-size: clamp(2.5rem, 9vw, 4rem); margin: 0 0 1rem; }
+h2 { font-size: 1.5rem; margin: 2.5rem 0 0.5rem; }
+p { margin: 0 0 1rem; }
+.note { color: var(--muted); }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.back { display: inline-block; padding: 0.5rem 0; margin-bottom: 2rem; }
