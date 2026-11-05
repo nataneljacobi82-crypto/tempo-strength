@@ -833,7 +833,7 @@ html.menu-open body {
 .marquee__track {
   display: flex;
   width: max-content;
-  animation: marquee 34s linear infinite;
+  animation: marquee 28s linear infinite;
 }
 
 .marquee:hover .marquee__track {
@@ -845,9 +845,24 @@ html.menu-open body {
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 3.4vw, 2.75rem);
   line-height: 1;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--ink);
+}
+
+.marquee__content em {
+  font-style: normal;
+  color: var(--muted);
+  -webkit-text-stroke: 0;
+  padding-inline: 0.15em;
+}
+
+.marquee__content b {
+  font-weight: 400;
+  color: var(--accent);
+  -webkit-text-stroke: 0;
 }
 
 @keyframes marquee {
