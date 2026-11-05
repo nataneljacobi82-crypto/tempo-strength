@@ -13,7 +13,7 @@
   --black: #000;
   --line-soft: rgba(243, 241, 234, 0.3);
   --font-display: "Anton", Impact, "Arial Narrow Bold", sans-serif;
-  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --nav-h: 64px;
   /* Demo banner height (measured by script); the nav sits below it until the page scrolls. */
   --banner-h: 31px;
@@ -1765,6 +1765,121 @@ html.menu-open body {
 .form__note {
   font-size: 0.8125rem;
   color: rgba(0, 0, 0, 0.72);
+}
+
+.form__hp {
+  position: absolute;
+  left: -9999px;
+}
+
+/* FAQ */
+.faq__list {
+  border-top: 1px solid var(--line-soft);
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.faq__item summary {
+  list-style: none;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 20px;
+  align-items: baseline;
+  gap: 16px;
+  padding: 24px 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.3;
+  transition: color 300ms ease;
+}
+
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__item summary:hover {
+  color: var(--accent);
+}
+
+.faq__item summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.faq__num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+}
+
+.faq__icon {
+  position: relative;
+  align-self: center;
+  width: 20px;
+  height: 20px;
+}
+
+.faq__icon::before,
+.faq__icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: var(--ink);
+  transform: translate(-50%, -50%);
+  transition: transform 300ms ease;
+}
+
+.faq__icon::before {
+  width: 100%;
+  height: 2px;
+}
+
+.faq__icon::after {
+  width: 2px;
+  height: 100%;
+}
+
+.faq__item[open] .faq__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.faq__body {
+  padding: 0 36px 28px 72px;
+  color: var(--muted);
+  max-width: 60ch;
+  line-height: 1.55;
+}
+
+@media (min-width: 900px) {
+  .faq__inner {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--gutter);
+    align-items: start;
+  }
+
+  .faq__head {
+    grid-column: 1 / span 5;
+    display: block;
+    margin-bottom: 0;
+  }
+
+  .faq__head .h2 {
+    font-size: clamp(2.75rem, 5vw, 4.5rem);
+  }
+
+  .faq__head .section__lede {
+    margin-top: 20px;
+    padding-bottom: 0;
+  }
+
+  .faq__list {
+    grid-column: 6 / -1;
+  }
 }
 
 .form__success {

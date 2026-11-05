@@ -622,15 +622,23 @@
         $('input', firstInvalid).focus();
         return;
       }
-      var success = document.createElement('div');
-      success.className = 'form__success';
-      success.setAttribute('role', 'status');
-      success.setAttribute('tabindex', '-1');
-      success.innerHTML =
-        '<p class="form__success-title">You’re in.</p>' +
-        '<p class="form__success-text">We’ll text you within the hour.</p>';
-      form.replaceWith(success);
-      success.focus();
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+      function showSuccess() {
+        var success = document.createElement('div');
+        success.className = 'form__success';
+        success.setAttribute('role', 'status');
+        success.setAttribute('tabindex', '-1');
+        success.innerHTML =
+          '<p class="form__success-title">You’re in.</p>' +
+          '<p class="form__success-text">We’ll text you within the hour.</p>';
+        form.replaceWith(success);
+        success.focus();
+      }
+      // Netlify Forms: post the encoded fields to the page URL.
+      var body = new URLSearchParams(new FormData(form)).toString();
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+        .then(showSuccess, showSuccess);
     });
   }
 

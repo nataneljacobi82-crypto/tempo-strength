@@ -2,14 +2,15 @@
 
 A single-page demo website for a fictional gym, built by [Corivo Digital](https://corivodigital.com) as a portfolio piece to show prospects what a premium, custom-built site looks like.
 
-Dark theme, Anton and Inter from Google Fonts, hard edges, electric lime accent. Pinned hero with a marquee strip, count-up stats, a sticky split-scroll programs section, a horizontally pinned coaches row, a filterable weekly schedule, three membership tiers, testimonials and a free-week sign-up form.
+Dark theme, Anton and Archivo from Google Fonts, hard edges, electric lime accent. Pinned hero with a marquee strip, count-up stats, a sticky split-scroll programs section, a horizontally pinned coaches row, a filterable weekly schedule, three membership tiers, testimonials and a free-week sign-up form.
 
 ## Stack
 
 - `index.html`, `styles.css`, `main.js`. Vanilla HTML, CSS and JavaScript. No frameworks, no build step, no npm.
 - `netlify.toml` publishes the repo root as-is and sets security headers.
-- `favicon.svg` is the lime "T" mark. `og-image.png` is the social share image referenced in the head.
-- Images are placeholders from [picsum.photos](https://picsum.photos) with fixed seeds so they stay consistent between loads.
+- `favicon.svg` is the lime "T" mark and `apple-touch-icon.png` is its 180px PNG for iOS home screens. `og-image.png` is the social share image referenced in the head.
+- Photography is hotlinked from Unsplash under the free Unsplash License. Swap in the client's own photos for a real project.
+- The free-week form uses Netlify Forms (`name="free-week"`); submissions appear under Forms in the Netlify dashboard.
 
 ## Run locally
 
