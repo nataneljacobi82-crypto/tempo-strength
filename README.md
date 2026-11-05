@@ -6,7 +6,7 @@ Dark theme, Anton and Archivo from Google Fonts, hard edges, electric lime accen
 
 ## Stack
 
-- `index.html`, `styles.css`, `main.js`. Vanilla HTML, CSS and JavaScript. No frameworks, no build step, no npm.
+- `index.html`, `styles.css`, `main.js`, `cookie-notice.js`. Vanilla HTML, CSS and JavaScript. No frameworks, no build step, no npm.
 - `netlify.toml` publishes the repo root as-is and sets security headers.
 - `favicon.svg` is the lime "T" mark and `apple-touch-icon.png` is its 180px PNG for iOS home screens. `og-image.png` is the social share image referenced in the head.
 - Photography is hotlinked from Unsplash under the free Unsplash License. Swap in the client's own photos for a real project.
