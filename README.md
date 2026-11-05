@@ -25,7 +25,7 @@ Then visit the printed URL.
 
 ## Deploy
 
-Push the repo to Netlify. `netlify.toml` already sets `publish = "."` and the headers. Once a domain is attached, change the `og:image` and `twitter:image` URLs in `index.html` to absolute URLs so social previews resolve.
+Push the repo to Netlify. `netlify.toml` already sets `publish = "."` and the headers.
 
 ## Decisions worth knowing
 
