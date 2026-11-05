@@ -635,10 +635,17 @@
         form.replaceWith(success);
         success.focus();
       }
+      var formError = $('#form-error');
+      if (formError) formError.hidden = true;
+      function showError() {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Claim my free week'; }
+        if (formError) { formError.hidden = false; formError.focus(); }
+      }
       // Netlify Forms: post the encoded fields to the page URL.
       var body = new URLSearchParams(new FormData(form)).toString();
       fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
-        .then(showSuccess, showSuccess);
+        .then(function (res) { if (!res.ok) throw new Error('Request failed with status ' + res.status); showSuccess(); })
+        .catch(showError);
     });
   }
 
